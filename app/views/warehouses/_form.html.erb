@@ -1,0 +1,10 @@
+<%= simple_form_for @warehouse, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@warehouse[:name]) %>
+  <%= f.input :address %>
+  <%= error_span(@warehouse[:address]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                warehouses_path, :class => 'btn btn-default' %>
+<% end %>

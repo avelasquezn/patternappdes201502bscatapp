@@ -1,0 +1,12 @@
+<%= simple_form_for @inventory, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :product %>
+  <%= error_span(@inventory[:product_id]) %>
+  <%= f.association :warehouse %>
+  <%= error_span(@inventory[:warehouse_id]) %>
+  <%= f.input :stock %>
+  <%= error_span(@inventory[:stock]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                inventories_path, :class => 'btn btn-default' %>
+<% end %>
